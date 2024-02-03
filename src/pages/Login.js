@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "../style/Login.css"
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
-
+import { AuthContext } from "../context/AuthContext"
 
 const Login = () => {
     const [error, setError] = useState(false)
@@ -11,6 +11,8 @@ const Login = () => {
     const [password, setPassword] = useState("")
 
     const navigate = useNavigate()
+
+    const {dispatch} = useContext(AuthContext)
 
     function visiblePassword() {
         var x = document.getElementById("passwordfield");
@@ -27,8 +29,9 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => { 
                 const user = userCredential.user;
+                dispatch({type:"LOGIN", payload:user})
                 console.log(user)
-                navigate("/home")
+                navigate("/anasayfa")
             })
             .catch((error) => {
                 setError(true)

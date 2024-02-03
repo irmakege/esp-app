@@ -1,0 +1,8 @@
+.sidebarcontainer{
+    background-color: wheat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 30px 20px;
+    border-radius: 7.5px;
+}
