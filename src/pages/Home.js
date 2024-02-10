@@ -1,11 +1,13 @@
 import React from 'react'
 import Sidebar from "../components/Sidebar"
+import DataGrid from '../components/DataGrid'
+import "../style/Home.css"
 
 const Home = () => {
   return (
-    <div>
+    <div className='homemaincontainer'>
       <Sidebar/>
-      
+      <DataGrid/>
     </div>
   )
 }

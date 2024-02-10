@@ -1,6 +1,6 @@
 .sidebarcontainer{
+    display: flex;
     background-color: wheat;
-    position: absolute;
     left: 0;
     top: 0;
     padding: 30px 20px;

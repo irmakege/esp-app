@@ -37,7 +37,7 @@ export default function Sidebar() {
                 {pages.map((division) => (
                     <div>
                         <a key={division.id} href={division.link} onSubmit={division.onsubmit}>
-                            <img src={division.icon}></img>
+                            <img src={division.icon} alt='img'></img>
                             <span>
                                 {division.name}
                             </span>
@@ -46,7 +46,7 @@ export default function Sidebar() {
                 ))}
 
                 <div onClick={handleLogout}>
-                    <img src=""></img>
+                    <img src="" alt='img'></img>
                     <span>
                         Çıkış Yap
                     </span>
